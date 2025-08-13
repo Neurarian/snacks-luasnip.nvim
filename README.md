@@ -2,7 +2,7 @@
 
 # snacks-luasnip.nvim
 
-<img width="1520" height="797" alt="image" src="https://github.com/user-attachments/assets/7c7a18cf-c816-4d2e-b277-b2d7caefb47f" />
+<img width="1535" height="481" alt="2025-08-13T21:18:45,803470792+02:00" src="https://github.com/user-attachments/assets/fa549dbf-622c-478b-b33c-43f81719c5e8" />
 
 </div>
 
