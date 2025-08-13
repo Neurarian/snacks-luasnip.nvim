@@ -48,3 +48,6 @@ require("snacks-luasnip").pick()
 ## 🙏 Credits
 
 [telescope-luasnip.nvim](https://github.com/benfowler/telescope-luasnip.nvim).
+
+## 🔄 Alternatives
+For a less minimal & more feature-rich solution you'll probably want to use [nvim-scissors](https://github.com/chrisgrieser/nvim-scissors) instead.
