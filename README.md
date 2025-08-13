@@ -2,7 +2,11 @@
 
 # snacks-luasnip.nvim
 
+<img width="1520" height="797" alt="image" src="https://github.com/user-attachments/assets/7c7a18cf-c816-4d2e-b277-b2d7caefb47f" />
+
 </div>
+
+---
 
 This is basically a 1:1 port of [telescope-luasnip.nvim](https://github.com/benfowler/telescope-luasnip.nvim) to the [snacks.nvim](https://github.com/folke/snacks.nvim) picker with some QoL enhancements.
 
