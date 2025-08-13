@@ -1,0 +1,57 @@
+*snacks-luasnip.txt*    LuaSnip picker for snacks.nvim
+
+CONTENTS                                                    *snacks-luasnip*
+
+1. Introduction ............................ |snacks-luasnip-intro|
+2. Usage ................................... |snacks-luasnip-usage|
+3. Configuration ........................... |snacks-luasnip-config|
+4. Functions ............................... |snacks-luasnip-functions|
+
+==============================================================================
+1. INTRODUCTION                                     *snacks-luasnip-intro*
+
+snacks-luasnip.nvim provides a fuzzy picker for LuaSnip snippets using the
+modern snacks.nvim picker interface.
+
+Features:
+- Fuzzy search through snippets
+- Live preview with syntax highlighting  
+- Smart filetype-based sorting
+- Direct snippet expansion
+
+==============================================================================
+2. USAGE                                           *snacks-luasnip-usage*
+
+Basic usage:
+>lua
+    require("snacks-luasnip").pick()
+<
+
+Via snacks picker (after auto-registration):
+>lua
+    Snacks.picker.sources.luasnip()
+<
+
+==============================================================================
+3. CONFIGURATION                                   *snacks-luasnip-config*
+
+Setup with options:
+>lua
+    require("snacks-luasnip").setup({
+      picker_opts = {
+        title = "Custom Title",
+      },
+    })
+<
+
+==============================================================================
+4. FUNCTIONS                                     *snacks-luasnip-functions*
+
+snacks-luasnip.pick({opts})                    *snacks-luasnip.pick()*
+    Open the LuaSnip snippet picker.
+
+    Parameters: ~
+      {opts} (table) Optional picker configuration
+
+vim:tw=78:ts=8:ft=help:norl:
+
