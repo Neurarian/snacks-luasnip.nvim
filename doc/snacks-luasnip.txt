@@ -26,12 +26,6 @@ Basic usage:
 >lua
     require("snacks-luasnip").pick()
 <
-
-Via snacks picker (after auto-registration):
->lua
-    Snacks.picker.sources.luasnip()
-<
-
 ==============================================================================
 3. CONFIGURATION                                   *snacks-luasnip-config*
 
