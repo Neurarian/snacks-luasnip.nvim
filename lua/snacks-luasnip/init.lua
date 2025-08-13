@@ -122,16 +122,15 @@ function M.pick(opts)
   return snacks.picker.pick(vim.tbl_deep_extend('force', {
     source = 'luasnip',
     title = 'LuaSnip Snippets',
+
     items = items,
 
     format = function(item)
       local description = filter_description(item.name, item.description)
       return {
         { item.icon .. '  ', item.icon_hl },
-        { string.format('%-4s', item.display_ft), 'SnacksPickerDirectory' },
-        { ' | ' },
-        { string.format('%-20s', item.name or ''), 'SnacksPickerFile' },
-        { ' | ' },
+        { string.format('%-6s', item.display_ft) .. ' ', 'SnacksPickerDirectory' },
+        { string.format('%-24s', item.name or '') .. ' ', 'SnacksPickerFile' },
         { description, 'SnacksPickerComment' },
       }
     end,
