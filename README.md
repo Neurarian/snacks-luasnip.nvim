@@ -4,7 +4,7 @@
 
 </div>
 
-This is basically a 1:1 port of [telescope-luasnip.nvim](https://github.com/benfowler/telescope-luasnip.nvim) to the [snacks.nvim](https://github.com/folke/snacks.nvim) with some QoL enhancements.
+This is basically a 1:1 port of [telescope-luasnip.nvim](https://github.com/benfowler/telescope-luasnip.nvim) to the [snacks.nvim](https://github.com/folke/snacks.nvim) picker with some QoL enhancements.
 
 ## 📦 Installation
 

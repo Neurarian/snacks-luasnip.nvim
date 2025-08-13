@@ -125,15 +125,14 @@ function M.pick(opts)
     items = items,
 
     format = function(item)
+      local description = filter_description(item.name, item.description)
       return {
-        { item.icon .. ' ', item.icon_hl },
-        { item.display_ft, hl = 'SnacksPickerDir', width = 12 },
-        { ' ' },
-        { item.name or '', hl = 'SnacksPickerFile', width = 24 },
-        { ' ' },
-        { item.trigger, hl = 'SnacksPickerSpecial', width = 16 },
-        { ' ' },
-        { filter_description(item.name, item.description), hl = 'SnacksPickerComment' },
+        { item.icon .. '  ', item.icon_hl },
+        { string.format('%-4s', item.display_ft), 'SnacksPickerDirectory' },
+        { ' | ' },
+        { string.format('%-20s', item.name or ''), 'SnacksPickerFile' },
+        { ' | ' },
+        { description, 'SnacksPickerComment' },
       }
     end,
 
