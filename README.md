@@ -44,7 +44,7 @@ require('snacks-luasnip').pick {
       { string.format('%-12s', item.trigger) .. ' ', item.icon_hl },
     }
   end,
-  -- You can easily disable the display of triggers, as i personally find them a bit reduntant
+  -- You can easily disable the display of triggers, as i personally find them a bit redundant
   show_trigger = false,
 }
 
