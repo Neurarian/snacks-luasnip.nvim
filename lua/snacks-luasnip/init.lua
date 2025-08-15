@@ -59,21 +59,21 @@ local defaults = {
   show_trigger = true,
 }
 
+-- Dependency checks
+local ok_snacks, snacks = pcall(require, 'snacks')
+if not ok_snacks then
+  vim.notify('snacks.nvim is required for snacks-luasnip', vim.log.levels.ERROR)
+  return {}
+end
+
+local ok_luasnip, luasnip = pcall(require, 'luasnip')
+if not ok_luasnip then
+  vim.notify('LuaSnip is not available', vim.log.levels.ERROR)
+  return {}
+end
+
 function M.pick(opts)
   opts = vim.tbl_deep_extend('force', {}, defaults, opts or {})
-
-  -- Dependency checks
-  local has_snacks, snacks = pcall(require, 'snacks')
-  if not has_snacks then
-    vim.notify('snacks.nvim is required for snacks-luasnip.nvim', vim.log.levels.ERROR)
-    return
-  end
-
-  local has_luasnip, luasnip = pcall(require, 'luasnip')
-  if not has_luasnip then
-    vim.notify('LuaSnip is not available', vim.log.levels.ERROR)
-    return
-  end
 
   local available = luasnip.available()
   local items = {}
