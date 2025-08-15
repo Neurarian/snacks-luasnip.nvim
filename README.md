@@ -6,7 +6,7 @@
 
 </div>
 
----
+______________________________________________________________________
 
 This is basically a 1:1 port of [telescope-luasnip.nvim](https://github.com/benfowler/telescope-luasnip.nvim) to the [snacks.nvim](https://github.com/folke/snacks.nvim) picker with some QoL enhancements.
 
@@ -32,10 +32,20 @@ This is basically a 1:1 port of [telescope-luasnip.nvim](https://github.com/benf
 ```lua
 -- Direct function call
 require('snacks-luasnip').pick {
-  -- You can pass the usual snacks picker config options as with any native picker
+  -- You can pass the usual snacks picker config options as with any native picker 
   layout = {
     preset = 'telescope',
   },
+  -- ... or override anything to your liking
+  format = function(item)
+    return {
+      { item.icon .. ' ', item.icon_hl },
+      { string.format('%-6s', item.display_ft) .. ' ', 'SnacksPickerDirectory' },
+      { string.format('%-12s', item.trigger) .. ' ', item.icon_hl },
+    }
+  end,
+  -- You can easily disable the display of triggers, as i personally find them a bit reduntant
+  show_trigger = false,
 }
 
 ```

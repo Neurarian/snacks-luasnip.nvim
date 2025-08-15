@@ -57,8 +57,12 @@ local function fit(str, width)
   return string.format('%-' .. width .. 's', str)
 end
 
+local defaults = {
+  show_trigger = true,
+}
+
 function M.pick(opts)
-  opts = opts or {}
+  opts = vim.tbl_deep_extend('force', {}, defaults, opts or {})
 
   -- Dependency checks
   local has_snacks, snacks = pcall(require, 'snacks')
@@ -136,14 +140,16 @@ function M.pick(opts)
     items = items,
 
     format = function(item)
-      local description = filter_description(item.name, item.description)
-
-      return {
+      local row = {
         { item.icon .. '  ', item.icon_hl },
         { fit(item.display_ft, 6) .. ' ', 'SnacksPickerDirectory' },
         { fit(item.name or '', 24) .. ' ', 'SnacksPickerFile' },
-        { description, 'SnacksPickerComment' },
       }
+      if opts.show_trigger then
+        row[#row + 1] = { fit(item.trigger, 12) .. ' ', item.icon_hl }
+      end
+      row[#row + 1] = { filter_description(item.name, item.description), 'SnacksPickerComment' }
+      return row
     end,
 
     preview = function(ctx)
