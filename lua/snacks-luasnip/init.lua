@@ -140,7 +140,7 @@ function M.pick(opts)
     format = function(item)
       local row = {
         { item.icon .. '  ', item.icon_hl },
-        { fit(item.display_ft, 6) .. ' ', 'SnacksPickerDirectory' },
+        { fit(item.display_ft, 10) .. ' ', 'SnacksPickerDirectory' },
         { fit(item.name or '', 24) .. ' ', 'SnacksPickerFile' },
       }
       if opts.show_trigger then
