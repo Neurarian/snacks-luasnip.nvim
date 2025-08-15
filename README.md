@@ -31,7 +31,13 @@ This is basically a 1:1 port of [telescope-luasnip.nvim](https://github.com/benf
 
 ```lua
 -- Direct function call
-require("snacks-luasnip").pick()
+require('snacks-luasnip').pick {
+  -- You can pass the usual snacks picker config options as with any native picker
+  layout = {
+    preset = 'telescope',
+  },
+}
+
 ```
 
 ## 🔧 Requirements
