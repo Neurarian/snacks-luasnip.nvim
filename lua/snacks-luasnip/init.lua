@@ -77,10 +77,13 @@ function M.pick(opts)
 
       local icon, icon_hl = snacks.util.icon(display_ft, 'filetype')
 
-      local search_text = filter_null(snippet.trigger) .. ' ' ..
-                         filter_null(snippet.name) .. ' ' ..
-                         ft .. ' ' ..
-                         filter_description(snippet.name, snippet.description)
+      local search_text = filter_null(snippet.trigger)
+        .. ' '
+        .. filter_null(snippet.name)
+        .. ' '
+        .. ft
+        .. ' '
+        .. filter_description(snippet.name, snippet.description)
 
       local priority = get_filetype_priority(ft, current_ft)
 
