@@ -6,16 +6,14 @@ local filter_null = function(str, default)
   return str and str or (default and default or '')
 end
 
-local filter_description = function(name, description)
-  local result = ''
-  if description and #description > 1 then
-    for _, line in ipairs(description) do
-      result = result .. line .. ' '
-    end
-  elseif name and description and description[1] ~= name then
-    result = description[1]
+local function filter_description(name, desc)
+  if desc and #desc > 1 then
+    return table.concat(desc, ' ')
+  elseif desc and name and desc[1] ~= name then
+    return desc[1]
+  else
+    return ''
   end
-  return result
 end
 
 local get_docstring = function(luasnip, ft, context)
