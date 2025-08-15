@@ -50,6 +50,13 @@ local function get_filetype_priority(ft, current_ft)
   end
 end
 
+local function fit(str, width)
+  if vim.fn.strdisplaywidth(str) > width then
+    str = str:sub(1, width - 1) .. '…'
+  end
+  return string.format('%-' .. width .. 's', str)
+end
+
 function M.pick(opts)
   opts = opts or {}
 
@@ -130,12 +137,6 @@ function M.pick(opts)
 
     format = function(item)
       local description = filter_description(item.name, item.description)
-      local function fit(str, width)
-        if vim.fn.strdisplaywidth(str) > width then
-          str = str:sub(1, width - 1) .. '…'
-        end
-        return string.format('%-' .. width .. 's', str)
-      end
 
       return {
         { item.icon .. '  ', item.icon_hl },
