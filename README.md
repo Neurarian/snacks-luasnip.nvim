@@ -59,7 +59,7 @@ require('snacks-luasnip').pick {
 ## 📝 Notes
 
 - Snippets need to be loaded before the picker can display them
-- If no snippets appear, try entering insert mode first to trigger snippet loading
+- If the picker does not load, try entering insert mode first to trigger snippet loading
 
 ## 🙏 Credits
 
